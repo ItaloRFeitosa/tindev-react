@@ -1,9 +1,3 @@
-.dev-card {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
 .dev-card-info{
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     display: flex;
@@ -45,38 +39,4 @@
     line-height: 20px;
     color: #999;
     margin-top: 5px;
-}
-
-.dev-card .like-dislike{
-    margin-top: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-}
-
-.dev-card .like-dislike button{
-    background: white;
-    height: 50px;
-    border: 0;
-    border-radius: 4px;
-    cursor: pointer;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    transition: 0.3s;
-}
-
-.dev-card .like-dislike button:hover{
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    transform: translateY(1px);
-}
-
-
-
-.dev-card .like-dislike button:hover img{
-    
-    animation: breath 0.5s infinite;
-}
-
-@keyframes breath {
-    0% {width: 15%;}
-    100% {width: 17%;}
 }
