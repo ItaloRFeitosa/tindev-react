@@ -8,15 +8,26 @@ import api from '../../services/api'
 
 export default function Login({ history }){
     const [username, setUsername] = useState('');
+    const [alert, setAlert] = useState(false)
 
     async function handleSubmit(e){
         e.preventDefault();
+        try {
+            
+            const res = await api.post('/devs', {
+                username
+            });
+            
+            //console.log(res)
+            history.push(`/home/${res.data._id}`);
 
-        const res = await api.post('/devs', {
-            username
-        });
+        } catch (error) {
+            
+            setAlert(true);
 
-        history.push(`/home/${res.data._id}`);
+            console.log(error);
+
+        }
     }
 
     return(
@@ -27,6 +38,7 @@ export default function Login({ history }){
                     placeholder='Digite usuário do Github'
                     value={username}
                     onChange={e => setUsername(e.target.value)}
+                    style= {{borderColor: alert ? "#df4723":"#ddd"}}
                 />
                 <button type='submit'>Login</button>
             </form>
